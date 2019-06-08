@@ -12,9 +12,10 @@
 
       Now with the style added below, it will be added to each div tag automatically.
 
-      div a selector only applies green to the a's inside div tags due to the order. This makes the first links red still, while the last links green.-->
+      div a selector only applies green to the a's inside div tags due to the order. This makes the first links red still, while the last links green.
 
-    <style>
+      Below is how to apply somethings to each tag in a page. What is better is to use classes and id's which are below. Below this comment is how to apply style to each tag in the page, which will not be used anymore
+
       a {
         color: red;
       }
@@ -22,6 +23,27 @@
         border: 1px solid black;
       }
       div a{
+        color: green;
+      }
+
+      id selector targests only one element per page, while class selector targets multiple elements.
+
+      To add id put # in front of name
+      To add class you add a . in front of the name.
+
+      Can target tags inside tags that have class selector tags (or ids) on them such as the green color example below. The code below turns the a tags green if they are in an element with class bio-box-->
+
+    <style>
+      a {
+        color: red;
+      }
+      #exec-bio {
+        background-color: lightgray;
+      }
+      .bio-box {
+        border: 1px solid black;
+      }
+      .bio-box a{
         color: green;
       }
     </style>
@@ -40,16 +62,16 @@
       </li>
     </ul>
     <h2>I'm an h2</h2>
-    <div>
+    <div id="exec-bio" class="bio-box">
       <a href="http://example.com/">I'm a link</a>
     </div>
-    <div>
+    <div class="bio-box">
       <a href="http://example.com/">I'm a link</a>
     </div>
-    <div>
+    <div class="bio-box">
       <a href="http://example.com/">I'm a link</a>
     </div>
-    <div>
+    <div class="bio-box">
       <a href="http://example.com/">I'm a link</a>
     </div>
   </body>
