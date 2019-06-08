@@ -3,32 +3,54 @@
   <head>
     <title>Test Page: Don't Panic</title>
     <meta charset="utf-8">
+    <!-- style block will hold style declarations for CSS, so we can make an internal style sheet. Style tag isn't visible on pages, so ok to do stuff here. Style tag can be anywhere but typical to put here. -->
+
+    <!-- div is a selector
+      the Declaration includes: border (which is a property) and 1px... (which is a value). End with ; for end of style
+
+      Its nice to alphabatize properties, so with sublime can highlight and hit F5 to alphabatize automatically
+
+      Now with the style added below, it will be added to each div tag automatically.
+
+      div a selector only applies green to the a's inside div tags due to the order. This makes the first links red still, while the last links green.-->
+
+    <style>
+      a {
+        color: red;
+      }
+      div {
+        border: 1px solid black;
+      }
+      div a{
+        color: green;
+      }
+    </style>
   </head>
   <body>
     <h1>I'm an h1</h1>
     <ul>
       <li>
-        <a href="http://example.com/" style="color: red;">Link</a>
+        <a href="http://example.com/">Link</a>
       </li>
       <li>
-        <a href="http://example.com/" style="color: red;">Link</a>
+        <a href="http://example.com/">Link</a>
       </li>
       <li>
-        <a href="http://example.com/" style="color: red;">Link</a>
+        <a href="http://example.com/">Link</a>
       </li>
     </ul>
     <h2>I'm an h2</h2>
-    <div style="border: 1px solid black;">
-      <a href="http://example.com/" style="color: green;">I'm a link</a>
+    <div>
+      <a href="http://example.com/">I'm a link</a>
     </div>
-    <div style="border: 1px solid black;">
-      <a href="http://example.com/" style="color: green;">I'm a link</a>
+    <div>
+      <a href="http://example.com/">I'm a link</a>
     </div>
-    <div style="border: 1px solid black;">
-      <a href="http://example.com/" style="color: green;">I'm a link</a>
+    <div>
+      <a href="http://example.com/">I'm a link</a>
     </div>
-    <div style="border: 1px solid black;">
-      <a href="http://example.com/" style="color: green;">I'm a link</a>
+    <div>
+      <a href="http://example.com/">I'm a link</a>
     </div>
   </body>
 </html>
