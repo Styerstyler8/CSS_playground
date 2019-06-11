@@ -39,15 +39,53 @@
       a {
         color: red;
       }
+      /*Both below reset the default margin and padding of the elements below */
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 7vw;
+        margin-top: 0;
+      }
+
+      /*font sizes should be relative size, not pixel defined due to different displays. Relative sizes good, pixel sizes good in certain applications like ad sizing, margins, images. Pixel sizes good for borders.*/
+      /*em's are useful for text sizing. The default text size is 16px and 1em = 16px. Fractions of ems represent pixels, like 0.5em = 8px. Automatically change value based on the font size that is inhereted from parent.
+      vh (viewport height) abd vw allow size elements on the page based on actual size of the browser window or mobile screen (mobile friendly). Each vw or vh is 1% of the corresponding screen dimension (3vh is 3% of screen height). Neither effected by parent elements). Bad thing about vh and vw is that stuff will look bad for desktop or mobile, use media query to fix.
+      14-18px height for text size is good.
+      62.5% trick: Set font-size on body to 62.5%, makes 1em equal 10px. Makes fractions better. Dont use this trick tho.
+      Recommendations: Use relative units (em) for text, dont use 62.5% trick, pick random numbers that set the font size close to what youre after.*/
+
+      /* HERO STYLES */
+      .full-hero {
+        background-color: #c7dbfc;
+        height:50vh;
+      }
 
       /* SOCIAL STYLES */
       .social-link {
+        /* rgba allows to set color with numbers and last is alpha, which sets transparancy from 0-1*/
+        background: rgba(150, 150, 150, 0.5);
         color: blue;
       }
 
       /* BIO STYLES */
+      .bio-wrapper {
+        /* Percentage sizing useful and based on the parent container that an element is in (not by browser/page). Width can be assumed, but height must be set on parent element and cant be assumed.
+        Changes are cumulative, so if parent is 0.5em and child is 0.5em, then that child is actually 0.25em (.5*.5)
+        rem can be used for font sizing where its the root em, which gets its original pixel value from the html tag (16px). 1rem will always equal this value, no matter if parent changes it.*/
+        font-size: 24px;
+      }
       .bio-box {
         border: 1px solid black;
+        font-size: 1rem;
+        width: 50%;
+      }
+      .bio-box h3 {
+        font-size: 1.5em;
+      }
+      .bio-copy {
+        font-size: 1em;
       }
       .bio-copy a {
         color: green;
@@ -55,19 +93,22 @@
     </style>
   </head>
   <body>
+    <div class="full-hero hero-home"
     <h1>I'm an h1</h1>
     <ul>
       <li>
-        <a href="http://example.com/">Link</a>
+        <a href="http://example.com/" class="social-link">Link</a>
       </li>
       <li>
-        <a href="http://example.com/">Link</a>
+        <a href="http://example.com/" class="social-link">Link</a>
       </li>
       <li>
-        <a href="http://example.com/">Link</a>
+        <a href="http://example.com/" class="social-link">Link</a>
       </li>
     </ul>
+  </div>
     <h2>I'm an h2</h2>
+    <div class="bio-wrapper">
     <div class="bio-box">
       <h3>Michael Hartl</h3>
       <a href="http://twitter.com/mhartl" class="social-link">here</a>
@@ -117,5 +158,6 @@
         The Future
       </p>
     </div>
+  </div>
   </body>
 </html>
